@@ -53,13 +53,13 @@ class outputpriority(Enum):
     SUF = 3
 
 class OperatingMode(Enum):
-        PowerOn=0
-        Standby=1
-        Mains=2
-        OffGrid=3
-        Bypass=4
-        Charging=5
-        Fault=6
+    PowerOn = 0
+    Standby = 1
+    Mains = 2
+    OffGrid = 3
+    Bypass = 4
+    Charging = 5
+    Fault = 6
 
 @dataclass
 class SystemStatus:
