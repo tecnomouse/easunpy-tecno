@@ -41,9 +41,25 @@ class OutputData:
     load_percentage: int
     frequency: int
 
+class batterychargingpriority(Enum):
+    SOF= 1
+    SNU= 2
+    OSO= 3
+    SOT= 4 
+    
+class outputpriority(Enum):
+    SUB = 1
+    SBU = 2
+    SUF = 3
+
 class OperatingMode(Enum):
-    SUB = 2
-    SBU = 3
+        PowerOn=0
+        Standby=1
+        Mains=2
+        OffGrid=3
+        Bypass=4
+        Charging=5
+        Fault=6
 
 @dataclass
 class SystemStatus:
@@ -97,6 +113,7 @@ class RegisterMap:
 # Define known inverter models
 REGISTER_MAPS = {
     "ISOLAR_SMG_II_11K": RegisterMap(
+        battery_charging_priority=632,
         operation_mode=201,
         battery_voltage=277,
         battery_current=278,
